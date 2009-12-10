@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.rdoc"]
   s.files = ["History.txt", "Manifest.txt", "README.rdoc", "Rakefile", "lib/reverse_geocoder.rb", "lib/reverse_geocoder/exceptions.rb", "lib/reverse_geocoder/geocoder.rb", "lib/reverse_geocoder/geonames.rb", "lib/reverse_geocoder/geoplugin.rb", "lib/reverse_geocoder/google.rb", "lib/reverse_geocoder/ibegin.rb", "lib/reverse_geocoder/multi.rb", "lib/reverse_geocoder/numerex.rb", "lib/reverse_geocoder/version.rb", "script/console", "script/destroy", "script/generate", "spec/geocoder_spec.rb", "spec/geonames_spec.rb", "spec/geoplugin_spec.rb", "spec/google_spec.rb", "spec/ibegin_spec.rb", "spec/multi_spec.rb", "spec/numerex_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "tasks/rspec.rake"]
   s.homepage = %q{http://github.com/billeisenhauer/reverse_geocoder}
-  s.post_install_message = %q{PostInstall.txt}
+  s.post_install_message = %q{Gig 'Em Aggies!  This is fightin' Texas Aggie software!}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{reverse_geocoder}
@@ -21,14 +21,18 @@ Gem::Specification.new do |s|
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    s.specification_version = 3
+    s.specification_version = 2
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<hoe>, [">= 2.3.3"])
+      s.add_runtime_dependency(%q<httparty>, [">= 0.4.5"])
+      s.add_development_dependency(%q<rspec>, ["= 1.2.9"])
     else
-      s.add_dependency(%q<hoe>, [">= 2.3.3"])
+      s.add_dependency(%q<httparty>, [">= 0.4.5"])
+      s.add_dependency(%q<rspec>, ["= 1.2.9"])
     end
   else
-    s.add_dependency(%q<hoe>, [">= 2.3.3"])
+    s.add_dependency(%q<httparty>, [">= 0.4.5"])
+    s.add_dependency(%q<rspec>, ["= 1.2.9"])
   end
+
 end

@@ -1,5 +1,6 @@
-module ReverseGeocoder    
-  
+# ReverseGeocoder
+#
+module ReverseGeocoder      
   # This module is meant to be mixed in to a class to enable it to perform
   # reverse geocoding.  The including class needs to implement three hook
   # methods:
@@ -29,6 +30,8 @@ module ReverseGeocoder
     
     module ClassMethods
     
+      # The geocode method is the 
+      #
       def geocode(lat, lng, options={})
         validate_coordinates(lat, lng)
         validate_options(options)
@@ -88,7 +91,7 @@ module ReverseGeocoder
           case response.code.to_i
             when 200 
               normalize(response)
-            when 401..403 
+            when 400..403 
               raise AuthenticationError 
             when 404 
               raise UnavailableAddress

@@ -8,12 +8,11 @@ module ReverseGeocoder
     class << self; attr_accessor :api_key end
     
     base_uri 'http://maps.google.com/maps'
-    default_params :key => api_key
     
     private
     
       def self.request(lat, lng, options)
-        query = {:q => "#{lat},#{lng}"}.merge(options)
+        query = {:q => "#{lat},#{lng}", :key => api_key}.merge(options)
         get("/geo", :query => query)
       end
       
